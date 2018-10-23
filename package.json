@@ -1,0 +1,12 @@
+{
+  "name": "particle-status",
+  "version": "0.1.0",
+  "description": "Node module to check Particle Cloud status",
+  "main": "index.js",
+  "repository": "https://github.com/lucamora/particle-status.git",
+  "author": "Luca Morandini <luca.morandini98@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "phin": "^2.9.3"
+  }
+}
