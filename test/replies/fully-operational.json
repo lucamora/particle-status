@@ -1,0 +1,40 @@
+{
+	"status": {
+        "indicator": "none",
+        "description": "All Systems Operational"
+    },
+	"components": [
+		{
+			"status": "operational",
+			"name": "build.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "console.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "api.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "docs.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "Device Service"
+		},
+		{
+			"status": "operational",
+			"name": "Compile Service"
+		},
+		{
+			"status": "operational",
+			"name": "Mobile carriers"
+		},
+		{
+			"status": "operational",
+			"name": "Webhooks"
+		}
+	]
+}

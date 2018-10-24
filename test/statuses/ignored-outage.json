@@ -1,0 +1,20 @@
+{
+	"operational": true,
+	"components": {
+		"operational": [
+			{
+				"status": "operational",
+				"name": "api.particle.io"
+			},
+			{
+				"status": "operational",
+				"name": "docs.particle.io"
+			},
+			{
+				"status": "operational",
+				"name": "Device Service"
+			}
+		],
+		"outage": []
+	}
+}

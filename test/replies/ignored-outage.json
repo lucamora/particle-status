@@ -1,0 +1,40 @@
+{
+	"status": {
+        "indicator": "outage",
+        "description": "Some systems are offline"
+    },
+	"components": [
+		{
+			"status": "outage",
+			"name": "build.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "console.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "api.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "docs.particle.io"
+		},
+		{
+			"status": "operational",
+			"name": "Device Service"
+		},
+		{
+			"status": "outage",
+			"name": "Compile Service"
+		},
+		{
+			"status": "operational",
+			"name": "Mobile carriers"
+		},
+		{
+			"status": "outage",
+			"name": "Webhooks"
+		}
+	]
+}

@@ -7,7 +7,8 @@
 	"author": "Luca Morandini <luca.morandini98@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"lint": "eslint lib"
+		"lint": "eslint lib",
+		"test": "mocha --opts mocha.opts"
 	},
 	"dependencies": {
 		"phin": "^2.9.3"
