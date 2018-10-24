@@ -11,5 +11,10 @@
 	},
 	"dependencies": {
 		"phin": "^2.9.3"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^5.2.0",
+		"nock": "^10.0.1"
 	}
 }
