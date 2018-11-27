@@ -13,32 +13,34 @@ yarn install particle-status
 ```
 
 ## Select components to be monitored
-Pass an array with the indexes of components you want to monitor.
+Pass an array with the named constants (or the indexes) of the components you want to monitor.
 ```javascript
 const particle = require('particle-status');
 
 // monitor build.particle.io, console.particle.io, Device Service
 particle.monitor([2, 3, 7]);
+// same as
+particle.monitor([particle.BUILD, particle.CONSOLE, particle.DEVICE_SERVICE]);
 ```
 
 ### Components indexes
 These are the components available in the [Particle status page](https://status.particle.io)
 
 
-| Index | Component | Description |
-| --- | --- | --- |
-| 0 | community.particle.io | Community Discussion Site and Forums |
-| 1 | www.particle.io | Particle main website |
-| 2 | build.particle.io | The web-based IDE, where users can write code and flash their devices |
-| 3 | console.particle.io | Tools to manage devices and the data they produce |
-| 4 | api.particle.io | The RESTful API used to communicate with connected devices |
-| 5 | docs.particle.io | Documentation |
-| 6 | login.particle.io | Single sign on for Particle web apps |
-| 7 | Device Service | This is what a Particle device connects to when it has an Internet connection |
-| 8 | Compile Service | The service that verifies and compiles firmware |
-| 9 | Mobile carriers | The cellular network providers for Particle SIMs |
-| 10 | Webhooks | Integration with custom services |
-| 11 | Ecommerce stores | The retail and wholesale store where to buy Particle hardware |
+| Index | Constant | Component | Description |
+| --- | --- | --- | --- |
+| 0 | COMMUNITY | community.particle.io | Community Discussion Site and Forums |
+| 1 | WEBSITE | www.particle.io | Particle main website |
+| 2 | BUILD | build.particle.io | The web-based IDE, where users can write code and flash their devices |
+| 3 | CONSOLE | console.particle.io | Tools to manage devices and the data they produce |
+| 4 | API | api.particle.io | The RESTful API used to communicate with connected devices |
+| 5 | DOCS | docs.particle.io | Documentation |
+| 6 | LOGIN | login.particle.io | Single sign on for Particle web apps |
+| 7 | DEVICE_SERVICE | Device Service | This is what a Particle device connects to when it has an Internet connection |
+| 8 | COMPILE_SERVICE | Compile Service | The service that verifies and compiles firmware |
+| 9 | MOBILE_CARRIERS | Mobile carriers | The cellular network providers for Particle SIMs |
+| 10 | WEBHOOKS | Webhooks | Integration with custom services |
+| 11 | STORE | Ecommerce stores | The retail and wholesale store where to buy Particle hardware |
 
 
 
