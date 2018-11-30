@@ -2,7 +2,55 @@ const expect = require('chai').expect;
 const nock = require('nock');
 const particle = require('../index');
 
-describe('zeus client tests', function () {
+describe('particle status page tests', function () {
+	before(function () {
+		nock('https://status.particle.io')
+			.get('/index.json')
+			.reply(500);
+	});
+
+	it('internal server error', function (done) {
+		particle.status(function (err) {
+			expect(err).to.be.an('error');
+
+			done();
+		});
+	});
+
+	before(function () {
+		nock('https://status.particle.io')
+			.get('/index.json')
+			.replyWithFile(200,
+				__dirname + '/replies/html-response.html',
+				{ 'Content-Type': 'text/html' }
+			);
+	});
+
+	it('html response', function (done) {
+		particle.status(function (err) {
+			expect(err).to.be.an('error');
+
+			done();
+		});
+	});
+
+	before(function () {
+		nock('https://status.particle.io')
+			.get('/index.json')
+			.replyWithFile(200,
+				__dirname + '/replies/invalid-json.json',
+				{ 'Content-Type': 'application/json' }
+			);
+	});
+
+	it('invalid json', function (done) {
+		particle.status(function (err) {
+			expect(err).to.be.an('error');
+
+			done();
+		});
+	});
+
 	before(function () {
 		nock('https://status.particle.io')
 			.get('/index.json')
