@@ -21,6 +21,23 @@ describe('particle status page tests', function () {
 		nock('https://status.particle.io')
 			.get('/index.json')
 			.replyWithFile(200,
+				__dirname + '/replies/internal-error.json',
+				{ 'Content-Type': 'application/json' }
+			);
+	});
+
+	it('internal error', function (done) {
+		particle.status(function (err) {
+			expect(err).to.be.an('error');
+
+			done();
+		});
+	});
+
+	before(function () {
+		nock('https://status.particle.io')
+			.get('/index.json')
+			.replyWithFile(200,
 				__dirname + '/replies/html-response.html',
 				{ 'Content-Type': 'text/html' }
 			);
