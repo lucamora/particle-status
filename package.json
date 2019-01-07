@@ -11,11 +11,11 @@
 		"test": "mocha --opts mocha.opts"
 	},
 	"dependencies": {
-		"phin": "^2.9.3"
+		"phin": "^3.2.4"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",
 		"mocha": "^5.2.0",
-		"nock": "^10.0.1"
+		"nock": "^10.0.6"
 	}
 }
