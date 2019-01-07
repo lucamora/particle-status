@@ -6,10 +6,13 @@ describe('particle status page tests', function () {
 	before(function () {
 		nock('https://status.particle.io')
 			.get('/index.json')
-			.reply(500);
+			.replyWithFile(500,
+				__dirname + '/replies/internal-error.json',
+				{ 'Content-Type': 'application/json' }
+			);
 	});
 
-	it('internal server error', function (done) {
+	it('internal server error (status 500)', function (done) {
 		particle.status(function (err) {
 			expect(err).to.be.an('error');
 
@@ -26,7 +29,7 @@ describe('particle status page tests', function () {
 			);
 	});
 
-	it('internal error', function (done) {
+	it('internal server error (status 200)', function (done) {
 		particle.status(function (err) {
 			expect(err).to.be.an('error');
 
