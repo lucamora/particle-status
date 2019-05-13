@@ -15,12 +15,16 @@ yarn install particle-status
 ## Select components to be monitored
 Pass an array with the named constants (or the indexes) of the components you want to monitor.
 ```javascript
-const particle = require('particle-status');
+const Particle = require('particle-status');
+const particle = Particle([Particle.BUILD, Particle.CONSOLE, Particle.DEVICE_SERVICE]);
+```
 
+It is also possible to select which components to monitor after the initialization of the client.
+```javascript
 // monitor build.particle.io, console.particle.io, Device Service
 particle.monitor([2, 3, 7]);
 // same as
-particle.monitor([particle.BUILD, particle.CONSOLE, particle.DEVICE_SERVICE]);
+particle.monitor([Particle.BUILD, Particle.CONSOLE, Particle.DEVICE_SERVICE]);
 ```
 
 ### Components indexes

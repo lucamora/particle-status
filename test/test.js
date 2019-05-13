@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const nock = require('nock');
-const particle = require('../index');
+const Particle = require('../index');
+const particle = Particle();
 
 describe('particle status page tests', function () {
 	before(function () {
