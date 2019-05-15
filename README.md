@@ -62,7 +62,7 @@ particle.status((err, status) => {
 
 The `status` object contains two fields:
 - `operational`: determine if every monitored component is operational
-- `components`: contains two arrays (`operational` and `outage`) with the components that are operational or affected by the outage
+- `components`: contains three arrays (`operational`, `outage` and `minor`) with the components that are operational or affected by major or minor outages
 
 ### Example with all systems operational
 ```json
@@ -83,7 +83,8 @@ The `status` object contains two fields:
 				"name": "Webhooks"
 			}
 		],
-		"outage": []
+		"outage": [],
+		"minor": []
 	}
 }
 ```
@@ -109,7 +110,8 @@ The `status` object contains two fields:
 				"status": "outage",
 				"name": "Webhooks"
 			}
-		]
+		],
+		"minor": []
 	}
 }
 ```

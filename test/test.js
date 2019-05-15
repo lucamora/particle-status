@@ -92,7 +92,6 @@ describe('particle status page tests', function () {
 		});
 	});
 
-
 	before(function () {
 		nock('https://status.particle.io')
 			.get('/index.json')
@@ -112,7 +111,6 @@ describe('particle status page tests', function () {
 		});
 	});
 
-
 	before(function () {
 		nock('https://status.particle.io')
 			.get('/index.json')
@@ -128,6 +126,25 @@ describe('particle status page tests', function () {
 		particle.status(function (err, status) {
 			expect(err).to.equal(null);
 			expect(status).to.deep.equal(require('./statuses/monitored-outage.json'));
+			done();
+		});
+	});
+
+	before(function () {
+		nock('https://status.particle.io')
+			.get('/index.json')
+			.replyWithFile(200,
+				__dirname + '/replies/minor-outage.json',
+				{ 'Content-Type': 'application/json' }
+			);
+	});
+
+	it('minor outage', function (done) {
+		particle.monitor([2, 6, 7]);
+
+		particle.status(function (err, status) {
+			expect(err).to.equal(null);
+			expect(status).to.deep.equal(require('./statuses/minor-outage.json'));
 			done();
 		});
 	});
