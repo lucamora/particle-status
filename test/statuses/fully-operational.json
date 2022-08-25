@@ -4,15 +4,15 @@
 		"operational": [
 			{
 				"status": "operational",
-				"name": "api.particle.io"
+				"name": "REST API"
 			},
 			{
 				"status": "operational",
-				"name": "Mobile carriers"
+				"name": "Customer Resources"
 			},
 			{
 				"status": "operational",
-				"name": "Webhooks"
+				"name": "Developer Tools"
 			}
 		],
 		"outage": [],

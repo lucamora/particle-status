@@ -1,65 +1,61 @@
 # particle-status
-Node module to check Particle Cloud status
+Node module to monitor the status of the components in the [Particle](https://www.particle.io/) Cloud [status page](https://status.particle.io).
 
-## Install the module
-#### NPM
+## Installation
 ```bash
 npm install particle-status
 ```
 
-#### Yarn
-```bash
-yarn install particle-status
+## Usage
+Import the module:
+```js
+const particle = require('particle-status')
 ```
 
-## Select components to be monitored
-Pass an array with the named constants (or the indexes) of the components you want to monitor.
-```javascript
-const Particle = require('particle-status');
-const particle = Particle([Particle.BUILD, Particle.CONSOLE, Particle.DEVICE_SERVICE]);
+Define an array with the names (or the indexes) of the components to be monitored *([see Components](#components))*:
+```js
+// monitor Cellular Connectivity, REST API, Integrations
+
+// use names of the components
+components = [particle.CELLULAR_CONNECTIVITY, particle.REST_API, particle.INTEGRATIONS]
+
+// use indexes of the components
+components = [0, 2, 3]
 ```
 
-It is also possible to select which components to monitor after the initialization of the client.
-```javascript
-// monitor build.particle.io, console.particle.io, Device Service
-particle.monitor([2, 3, 7]);
-// same as
-particle.monitor([Particle.BUILD, Particle.CONSOLE, Particle.DEVICE_SERVICE]);
+It is also possible to monitor all the components:
+```js
+components = particle.ALL_COMPONENTS
 ```
 
-### Components indexes
-These are the components available in the [Particle status page](https://status.particle.io)
+Check the status of monitored components:
+```js
+particle.status(components, (err, status) => {
+  if (err) {
+    return
+  }
 
-
-| Index | Constant | Component | Description |
-| --- | --- | --- | --- |
-| 0 | COMMUNITY | community.particle.io | Community Discussion Site and Forums |
-| 1 | WEBSITE | www.particle.io | Particle main website |
-| 2 | BUILD | build.particle.io | The web-based IDE, where users can write code and flash their devices |
-| 3 | CONSOLE | console.particle.io | Tools to manage devices and the data they produce |
-| 4 | API | api.particle.io | The RESTful API used to communicate with connected devices |
-| 5 | DOCS | docs.particle.io | Documentation |
-| 6 | LOGIN | login.particle.io | Single sign on for Particle web apps |
-| 7 | DEVICE_SERVICE | Device Service | This is what a Particle device connects to when it has an Internet connection |
-| 8 | COMPILE_SERVICE | Compile Service | The service that verifies and compiles firmware |
-| 9 | MOBILE_CARRIERS | Mobile carriers | The cellular network providers for Particle SIMs |
-| 10 | WEBHOOKS | Webhooks | Integration with custom services |
-| 11 | STORE | Ecommerce stores | The retail and wholesale store where to buy Particle hardware |
-
-
-
-## Check the status of monitored components
-```javascript
-particle.status((err, status) => {
-	if (err) {
-		return;
-	}
-
-	// do something with status object
-	console.log(status['operational']);
-});
+  // do something with status object
+  console.log(`operational: ${status.operational}`)
+  console.log(`outages count: ${status.outage.length}`)
+})
 ```
 
+## Components
+These are the components available in the Particle [status page](https://status.particle.io)
+
+| Index | Component | Description |
+| --- | --- | --- |
+| 0 | CELLULAR_CONNECTIVITY | General reachability of devices such as Boron and Electron to and from the Particle Cloud over cellular networks |
+| 1 | WIFI_CONNECIVITY | General reachability of devices such as Argon & Photon to and from the Particle Cloud over WiFi networks |
+| 2 | REST_API | [api.particle.io](https://api.particle.io) endpoints not related to device reachability and SIM management, impacts to these endpoints are captured via Cellular Connectivity, Wifi Connectivity, and Telephony Providers components |
+| 3 | INTEGRATIONS | Systems responsible for delivering events generated via `Particle.publish` to external systems such as Azure IoT, Google IoT, or custom http endpoints (webhooks) |
+| 4 | MANAGEMENT_CONSOLE | Covers availability of Particle's primary device management interface at [https://console.particle.io](https://console.particle.io) |
+| 5 | TELEPHONY_PROVIDERS | Connectivity of cellular devices and SIM state management |
+| 6 | CUSTOMER_RESOURCES | Store, documentation, community forum, web-based IDE ([build.particle.io](https://build.particle.io)), main website |
+| 7 | DEVELOPER_TOOLS | Particle Workbench and Particle CLI |
+
+## Status format
 The `status` object contains two fields:
 - `operational`: determine if every monitored component is operational
 - `components`: contains three arrays (`operational`, `outage` and `minor`) with the components that are operational or affected by major or minor outages

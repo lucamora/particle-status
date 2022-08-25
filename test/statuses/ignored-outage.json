@@ -4,15 +4,15 @@
 		"operational": [
 			{
 				"status": "operational",
-				"name": "api.particle.io"
+				"name": "REST API"
 			},
 			{
 				"status": "operational",
-				"name": "docs.particle.io"
+				"name": "Integrations"
 			},
 			{
 				"status": "operational",
-				"name": "Device Service"
+				"name": "Management Console"
 			}
 		],
 		"outage": [],

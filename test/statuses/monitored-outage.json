@@ -4,17 +4,17 @@
 		"operational": [
 			{
 				"status": "operational",
-				"name": "Mobile carriers"
+				"name": "Customer Resources"
 			}
 		],
 		"outage": [
 			{
 				"status": "outage",
-				"name": "api.particle.io"
+				"name": "REST API"
 			},
 			{
 				"status": "outage",
-				"name": "Webhooks"
+				"name": "Developer Tools"
 			}
 		],
 		"minor": []

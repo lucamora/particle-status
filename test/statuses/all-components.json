@@ -1,0 +1,43 @@
+{
+	"operational": false,
+	"components": {
+		"operational": [
+            {
+                "status": "operational",
+                "name": "Cellular Connectivity"
+            },
+            {
+                "status": "operational",
+                "name": "Wi-Fi Connectivity"
+            },
+            {
+                "status": "operational",
+                "name": "Management Console"
+            },
+            {
+                "status": "operational",
+                "name": "Telephony Providers"
+            },
+			{
+				"status": "operational",
+				"name": "Customer Resources"
+			}
+		],
+		"outage": [
+            {
+                "status": "outage",
+                "name": "REST API"
+            },
+            {
+                "status": "outage",
+                "name": "Developer Tools"
+            }
+        ],
+		"minor": [
+            {
+                "status": "degraded_performance",
+                "name": "Integrations"
+            }
+        ]
+	}
+}

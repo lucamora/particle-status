@@ -7,15 +7,21 @@
 	"author": "Luca Morandini <luca.morandini98@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"lint": "eslint lib",
-		"test": "mocha --opts mocha.opts"
+		"lint": "standard",
+		"test": "mocha --exit"
 	},
+	"standard": {
+		"ignore": [
+		  "test/*"
+		]
+	  },
 	"dependencies": {
-		"phin": "3.3.0"
+		"phin": "^3.6.1"
 	},
 	"devDependencies": {
-		"chai": "^4.2.0",
-		"mocha": "^6.1.4",
-		"nock": "^10.0.6"
+		"chai": "^4.3.6",
+		"mocha": "^10.0.0",
+		"nock": "^13.2.9",
+		"standard": "^17.0.0"
 	}
 }

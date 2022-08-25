@@ -1,7 +1,7 @@
 {
 	"status": {
-        "indicator": "none",
-        "description": "All Systems Operational"
+        "indicator": "outage",
+        "description": "Some systems have some problems"
     },
 	"components": [
 		{
@@ -13,11 +13,11 @@
 			"name": "Wi-Fi Connectivity"
 		},
 		{
-			"status": "operational",
+			"status": "outage",
 			"name": "REST API"
 		},
 		{
-			"status": "operational",
+			"status": "degraded_performance",
 			"name": "Integrations"
 		},
 		{
@@ -33,7 +33,7 @@
 			"name": "Customer Resources"
 		},
 		{
-			"status": "operational",
+			"status": "outage",
 			"name": "Developer Tools"
 		}
 	]

@@ -6,35 +6,35 @@
 	"components": [
 		{
 			"status": "operational",
-			"name": "build.particle.io"
+			"name": "Cellular Connectivity"
 		},
 		{
 			"status": "operational",
-			"name": "console.particle.io"
+			"name": "Wi-Fi Connectivity"
 		},
 		{
 			"status": "outage",
-			"name": "api.particle.io"
+			"name": "REST API"
 		},
 		{
 			"status": "operational",
-			"name": "docs.particle.io"
+			"name": "Integrations"
 		},
 		{
 			"status": "operational",
-			"name": "Device Service"
+			"name": "Management Console"
 		},
 		{
 			"status": "operational",
-			"name": "Compile Service"
+			"name": "Telephony Providers"
 		},
 		{
 			"status": "operational",
-			"name": "Mobile carriers"
+			"name": "Customer Resources"
 		},
 		{
 			"status": "outage",
-			"name": "Webhooks"
+			"name": "Developer Tools"
 		}
 	]
 }
