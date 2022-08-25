@@ -1,4 +1,2 @@
+.github/
 test/
-.eslintrc.json
-mocha.opts
-yarn.lock
